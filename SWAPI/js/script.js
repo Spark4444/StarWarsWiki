@@ -1,3 +1,4 @@
+// Define global variables
 let sections = document.querySelector(".sections");
 let data = document.querySelector(".data");
 let actualData = document.querySelector(".actualData");
@@ -11,23 +12,26 @@ let currentData;
 let result;
 let names;
 
-console.log(window.innerWidth);
-console.log(window.innerHeight);
-
+// Function to fetch data from SWAPI by a name and a key
 const getRecources = async (name, key) => {
+    // Display loading animation
     const loadingHTML = `<div class='loading'>Loading<img src='img/loading.gif' class='loading${key}' alt='loadingGif'></div>`;
     (key == 1 ? sections : data).innerHTML = loadingHTML;
 
+    // Fetch data from SWAPI
     let res = await fetch(name,{ type });
     let recources = await res.json();
 
+    // If key is 1, display available data
     if(key == 1){
         names = recources;
         sections.innerHTML = "";
         Object.keys(recources).forEach(recource => {
             sections.innerHTML += `<div onclick="displayAvailableData('${recource}')" class="info">${recource}</div><br><br>`;
         });
-    } else if(key == 2){
+    } 
+    // If key is 2, display the results
+    else if(key == 2){
         result = recources.results;
         resultsNum = 0;
         data.innerHTML = "";
@@ -37,6 +41,7 @@ const getRecources = async (name, key) => {
             realCount++;
             data.innerHTML += `<div class="dataInside" onclick="displayObjectData('${realCount}')">${count + ". " + (name == "https://swapi.dev/api/films/" ? recources.results[index].title : recources.results[index].name)}</div><br><br>`;
         });
+        // Add navigation buttons
         if(resultsNum == 10 && name !== "https://swapi.dev/api/planets/?page=6"){
             data.innerHTML += `<div onclick="nextPage('${name}')" class="nextPage">Next page</div>`;
         }
@@ -49,8 +54,10 @@ const getRecources = async (name, key) => {
     }
 }
 
+// Fetch data from SWAPI
 getRecources(resTemp, 1);
 
+// Function to display available data
 function displayAvailableData(recource){
     pageCount = 1;
     count = 0;
@@ -60,6 +67,7 @@ function displayAvailableData(recource){
     currentData = names[recource];
 }
 
+// Function to navigate to the next page
 function nextPage(recource){
     pageCount++;
     realCount = -1;
@@ -72,6 +80,7 @@ function nextPage(recource){
     getRecources(recource, 2);
 }
 
+// Function to navigate to the previous page
 function previousPage(recource){
     count -= 20;
     realCount = -1;
@@ -82,6 +91,7 @@ function previousPage(recource){
     getRecources(recource, 2);
 }
 
+// Function to display object data
 function displayObjectData(clickNum){
     let currentDataUsed = result[clickNum];
     actualData.innerHTML = "";
