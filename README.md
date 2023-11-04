@@ -1,2 +1,1 @@
-# SWAPI
-Star wars wiki using swapi
+Just star wars wiki using swapi
