@@ -30,7 +30,7 @@ main {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    font-size: 0.8vw;
+    font-size: 0.7vw;
     height: 60%;
     justify-content: center;
     transition: 0.5s;
