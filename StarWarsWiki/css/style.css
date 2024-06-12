@@ -1,0 +1,124 @@
+html{
+    height: 100%;
+    transition: 0.5s;
+    width: 100%;
+}
+body{
+    background-color: #000;
+    box-sizing: border-box;
+    font-family: Helvetica;
+    font-weight: bolder;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    transition: 0.5s;
+    width: 100%;
+}
+header {
+    align-items: center;
+    background-color: #000;
+    color: #FFE81F;
+    display: flex;
+    font-size: 1.6vw;
+    height: 20%;
+    justify-content: center;
+    transition: 0.5s;
+    width: 100%;
+}
+main {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    font-size: 0.7vw;
+    height: 60%;
+    justify-content: center;
+    transition: 0.5s;
+    width: 100%;
+}
+.sections {
+    align-items: center;
+    background-color: #000;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 100%;
+    justify-content: center;
+    transition: 0.5s;
+    width: 33.3%;
+}
+.data{
+    align-items: center;
+    background-color: #000;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 100%;
+    justify-content: center;
+    transition: 0.5s;
+    width: 33.3%;
+}
+.actualData {
+    align-items: center;
+    background-color: #000;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 100%;
+    justify-content: center;
+    transition: 0.5s;
+    width: 33.3%;
+}
+.loading {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    transition: 0.5s;
+}
+.dataInside{
+    cursor: pointer;
+    transition: 0.5s;
+}
+.info{
+    cursor: pointer;
+    transition: 0.5s;
+}
+.nextPage{
+    cursor: pointer;
+    padding: 0 0 1% 0;
+    transition: 0.5s;
+}
+.previousPage{
+    cursor: pointer;
+    transition: 0.5s;
+}
+img.loading1 {
+    margin: 0.8vw;
+    transition: 0.5s;
+    width: 0.8vw;
+}
+img.loading2 {
+    margin: 0.8vw;
+    transition: 0.5s;
+    width: 0.8vw;
+}
+footer{
+    align-items: center;
+    background-color: #000;
+    color: #FFE81F;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 20%;
+    justify-content: center;
+    transition: 0.5s;
+    width: 100%;
+}
+.footerText{
+    font-size: 1vw;
+    transition: 0.5s;
+}
